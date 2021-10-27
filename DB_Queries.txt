@@ -1,0 +1,32 @@
+Create database triviaking;
+Use triviaking;
+ CREATE TABLE user_authenticationd (
+   username varchar(20) NOT NULL,
+     email varchar(40) NOT NULL,
+    password varchar(20),
+     PRIMARY KEY (username)
+);
+
+create table questions_sports(id varchar(50),question varchar(100),option1 varchar(100),option2 varchar(100),option3 varchar(100),option4 varchar(100),correct varchar(100),primary key (id));
+
+insert into questions_sports values('1','which sport does not require a helmet?','Cricket','Football','Hockey','Moto GP','Football');
+insert into questions_sports values('2','How many players play for one team in cricket?','7','11','13','6','11');
+insert into questions_sports values('3','which sport does not require a helmet?','Cricket','Football','Hockey','Moto GP','Football');
+insert into questions_sports values('4','which sport does not require a helmet?','Cricket','Football','Hockey','Moto GP','Football');
+insert into questions_sports values('5','which sport does not require a helmet?','Cricket','Football','Hockey','Moto GP','Football');
+
+Select * from questions_sports;
+
+ CREATE TABLE user_scores (
+	username varchar(20) NOT NULL,
+	category varchar(20) NOT NULL,
+	timestamp datetime,
+	score int
+);
+
+Select sysdate();
+Select * from leaderboard;
+create table leaderboard(username varchar(20),score int,category varchar(20));
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Kaushik@1';
+flush privileges;
