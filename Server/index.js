@@ -97,7 +97,7 @@ app.get('/Questions/:id',(request,response)=>{
  app.get('/leaderboard',(request,response)=>{
      data=[]
 	connection.query(
-		"select username,category,score  from leaderboard",
+		"Select distinct(username), category, max(score) as score from leaderboard group by username, category;",
 		(err, result) => {
 		  if (result.length > 0) {
 			  console.log(result)
