@@ -31,7 +31,7 @@ class Question extends Component{
 
     componentDidMount()
     {
-        var url='http://localhost:3002/Questions/'+this.state.selectedCategory;
+        var url='http://localhost:3002/questions/'+this.state.selectedCategory;
         Axios.get(url).then(res => {
            const a=JSON.parse(res.data)
            this.setState({data:a})
@@ -71,19 +71,39 @@ class Question extends Component{
           }
 
         return(
-            <Container fluid className="fontClass">
-            <Row>
-            < Navbar/>
-            </Row>
-            <Row>
-        { this.state.current && 
-        <div class="row">
-               <p>Q. {this.state.current.question}</p>  
-              <Button value={this.state.current.option1} variant="outline-primary" onClick={this.handleAnswer}> {this.state.current.option1} </Button>
-              <Button value={this.state.current.option2} variant="outline-primary" onClick={this.handleAnswer}> {this.state.current.option2} </Button>
-              <Button value={this.state.current.option3} variant="outline-primary" onClick={this.handleAnswer}> {this.state.current.option3} </Button>
-              <Button value={this.state.current.option4} variant="outline-primary" onClick={this.handleAnswer}> {this.state.current.option4} </Button> 
-        </div>}
+            <>
+                <Container fluid>
+                    <Row noGutters>
+                        < Navbar/>
+                    </Row>
+                        <Row>
+                            {this.state.current &&
+                            <div id="question_container" className="col-12 container-fluid">
+                                <div id="question" className="text-center">
+                                    <p>{this.state.current.question}</p>
+                                </div>
+                            </div>
+                            }
+                        </Row>
+                </Container>
+                <Container>
+                    <Row className={"justify-content-center"}>
+            <div class="row">
+                {this.state.current &&
+                    <>
+                <div class="d-grid gap-2 col-6">
+                    <Button value={this.state.current.option1} size="lg" className="quiz-btn" variant="primary"
+                            onClick={this.handleAnswer}> {this.state.current.option1}</Button>
+                    <Button value={this.state.current.option2} size="lg" className="quiz-btn" variant="primary"
+                            onClick={this.handleAnswer}> {this.state.current.option2}</Button>
+                </div>
+                    <div className="d-grid gap-2 col-6">
+                    <Button value={this.state.current.option3} size="lg" className="quiz-btn" variant="primary" onClick={this.handleAnswer}> {this.state.current.option3}</Button>
+                    <Button value={this.state.current.option4} size="lg" className="quiz-btn" variant="primary" onClick={this.handleAnswer}> {this.state.current.option4}</Button>
+                    </div>
+                    </>
+                }
+        </div>
       
             </Row>
          
@@ -102,6 +122,7 @@ class Question extends Component{
           </Modal.Footer>
         </Modal>
             </Container>
+            </>
         )
     }
 }

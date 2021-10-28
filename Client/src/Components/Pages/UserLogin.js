@@ -1,6 +1,8 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import Axios from 'axios';
-import { Button, Form} from 'react-bootstrap';
+import { Button, Form, Row} from 'react-bootstrap';
+import logo_full from '../../images/tk_logo_full.png';
+import logo_mobile from '../../images/tk_logo_small.png';
 import {Link,Redirect} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -87,11 +89,13 @@ class UserLogin extends Component{
         return (
           
         <div className="backdrop form">
-          <Form  className="fontClass input rounded perfect-centering login-form">
-            <h1 className="logo text-center">
-                <span className="font-weight-bold">TriviaKing</span>
-            </h1>
-            <h4 className="gap font-weight-bold text-center">
+          <Form className="input rounded perfect-centering login-form">
+            <div className="container">
+                <Row>
+                  <img src={logo_full} id="logo_full" className='login'/><img src={logo_mobile} id="logo_mobile" className='login'/>
+                </Row>
+            </div>
+            <h4 className="gap font-weight-bold text-center" style={{color: "#ffffff"}}>
                  Login
             </h4>
             <Form.Group size="lg"  className="gap">
@@ -103,12 +107,12 @@ class UserLogin extends Component{
             </Form.Group>
             <span Style="color: red" >{this.state.passwordError}</span>
             <div className="gap">
-              <Button align="center" onClick={this.handleSubmit} style={{padding:'8px'}} className="btn-primary">Login</Button>
+              <Button onClick={this.handleSubmit} style={{padding:'8px'}} className="btn-light float-right">Login</Button>
             </div>
-            <div style={{padding:'8px'}} className="text-center">
-              <Link to="/register">Register</Link>
+            <div style={{padding:'8px', color:'#ffffff'}} className="text-center">
+              <Link to="/register" className="deco-none">Register</Link>
               <span className="p-2">|</span>
-              <a href="/ForgotPassword">Forgot Password?</a>
+              <a href="/ForgotPassword" class="deco-none">Forgot Password?</a>
              </div>
           </Form>
         </div>     

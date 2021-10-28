@@ -31,68 +31,78 @@ class Categories extends Component{
       }
    
        return(
-        <Container fluid className="fontClass">
-        <Row>
-        < Navbar/>
-        </Row>
-        <Row>
-            <h1>Categories</h1><br></br>
-           <div class="row">
-                   <Card class="col-sm-3" style={{ width: '18rem' }}>
-                   <Card.Img variant="top" src={Sports} ></Card.Img>
-                   <Card.Body>
-                     <Card.Title>Sports Quiz</Card.Title>
-                     <Card.Text>
-                       Click on start to begin the quiz.
-                     </Card.Text>
-                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/Questions/sports" }}> Start</Link></Button>
-                   </Card.Body>
-                 </Card>
-                 <Card class="col-sm-3" style={{ width: '18rem' }}>
-                   <Card.Img variant="top" src={GK}></Card.Img>
-                   <Card.Body>
-                     <Card.Title>General Knowledge Quiz</Card.Title>
-                     <Card.Text>
-                       Click on start to begin the quiz.
-                     </Card.Text>
-                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/Questions/GK" }}> Start</Link></Button>
-                   </Card.Body>
-                 </Card>
-                 <Card class="col-sm-3" style={{ width: '18rem' }}>
-                   <Card.Img variant="top" src={football} ></Card.Img>
-                   <Card.Body>
-                     <Card.Title>Football Quiz</Card.Title>
-                     <Card.Text>
-                       Click on start to begin the quiz.
-                     </Card.Text>
-                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/Questions/football" }}> Start</Link></Button>
-                   </Card.Body>
-                 </Card>
-                 <Card class="col-sm-3" style={{ width: '18rem' }}>
-                   <Card.Img variant="top" src={science} ></Card.Img>
-                   <Card.Body>
-                     <Card.Title>Science Quiz</Card.Title>
-                     <Card.Text>
-                       Click on start to begin the quiz.
-                     </Card.Text>
-                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/Questions/science" }}> Start</Link></Button>
-                   </Card.Body>
-                 </Card>
-                 <Card class="col-sm-3" style={{ width: '18rem' }}>
-                   <Card.Img variant="top" src={history} ></Card.Img>
-                   <Card.Body>
-                     <Card.Title>History Quiz</Card.Title>
-                     <Card.Text>
-                       Click on start to begin the quiz.
-                     </Card.Text>
-                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/Questions/history" }}> Start</Link></Button>
-                   </Card.Body>
-                 </Card>
-           </div>
-           </Row>
-           </Container>
+           <>
 
-       );
+        <Container fluid>
+            <Row noGutters>
+                < Navbar/>
+            </Row>
+        </Container>
+        <Container>
+            <div class="row">
+                <div class="col-12">
+                    <h1 style={{margin: 20 + 'px'}}>Categories</h1>
+                        <Container>
+                            <Row xs={1} md={2} lg={3} xl={4}>
+                                   <Card className="category" style={{ width: '18rem' }}>
+                                   <Card.Img variant="top" src={Sports} ></Card.Img>
+                                   <Card.Body>
+                                     <Card.Title>Sports Quiz</Card.Title>
+                                     <Card.Text>
+                                       Click on start to begin the quiz.
+                                     </Card.Text>
+                                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/questions/sports" }}> Start</Link></Button>
+                                   </Card.Body>
+                                 </Card>
+                                 <Card className="category" style={{ width: '18rem' }}>
+                                   <Card.Img variant="top" src={GK}></Card.Img>
+                                   <Card.Body>
+                                     <Card.Title>General Knowledge Quiz</Card.Title>
+                                     <Card.Text>
+                                       Click on start to begin the quiz.
+                                     </Card.Text>
+                                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/questions/GK" }}> Start</Link></Button>
+                                   </Card.Body>
+                                 </Card>
+                                 <Card className="category" style={{ width: '18rem' }}>
+                                   <Card.Img variant="top" src={football} ></Card.Img>
+                                   <Card.Body>
+                                     <Card.Title>Football Quiz</Card.Title>
+                                     <Card.Text>
+                                       Click on start to begin the quiz.
+                                     </Card.Text>
+                                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/questions/football" }}> Start</Link></Button>
+                                   </Card.Body>
+                                 </Card>
+                                 <Card className="category" style={{ width: '18rem' }}>
+                                   <Card.Img variant="top" src={science} ></Card.Img>
+                                   <Card.Body>
+                                     <Card.Title>Science Quiz</Card.Title>
+                                     <Card.Text>
+                                       Click on start to begin the quiz.
+                                     </Card.Text>
+                                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/questions/science" }}> Start</Link></Button>
+                                   </Card.Body>
+                                 </Card>
+                                 <Card className="category" style={{ width: '18rem' }}>
+                                   <Card.Img variant="top" src={history} ></Card.Img>
+                                   <Card.Body>
+                                     <Card.Title>History Quiz</Card.Title>
+                                     <Card.Text>
+                                       Click on start to begin the quiz.
+                                     </Card.Text>
+                                     <Button variant="primary"><Link style={{color: '#fff'}} to={{ pathname: "/questions/history" }}> Start</Link></Button>
+                                   </Card.Body>
+                                 </Card>
+                            </Row>
+                        </Container>
+
+                </div>
+            </div>
+        </Container>
+               </>
+
+   );
    }
 }
 
