@@ -1,0 +1,15 @@
+Possible class that would need to be implemented:
+- Question class
+-- This class would contain all possible answers for the question, and which of those would be correct.
+-- Possible methods would include a function to handle the answering of a question and the shuffling of answers
+
+- User class
+---- This class would contain all information to know about a user. For example, the user's username, profile picture, favorite category, games played, high scores, and possibly more attributes.
+---- Possible methods would include functions to login/register a user, recall the users high score, set favorite playing mode, and many more methods
+
+- Category class
+---- This class would contain the name of a category and a bank of questions pertaining to that category and related categories. It could also could the amount of times a user has played a certain category
+
+- Leaderboard class
+---- This class would contain the highest scores from each category and display them on a leaderboard
+---- Possible methods would include functions to display high scores for a certain category, or for a certain user.
