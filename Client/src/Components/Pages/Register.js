@@ -1,8 +1,10 @@
-import { Component } from "react";
-import { Button, Form } from 'react-bootstrap';
+import React, { Component } from "react";
+import {Button, Form, Row} from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo_full from "../../images/tk_logo_full.png";
+import logo_mobile from "../../images/tk_logo_small.png";
 
 class Register extends Component{
     constructor(props){
@@ -129,12 +131,12 @@ class Register extends Component{
         return(
             <div className="backdrop form">
             <Form  className="fontClass input rounded perfect-centering login-form">
-                 <h1 className="logo text-center">
-                        <span className="font-weight-bold">TriviaKing</span>
-                    </h1>
-                    <h4 className="gap font-weight-bold text-center">
-                       Registeration
-                    </h4>
+                <div className="container">
+                    <Row>
+                        <img src={logo_full} id="logo_full" className='login'/><img src={logo_mobile} id="logo_mobile" className='login'/>
+                    </Row>
+                </div>
+                <h4 className="gap font-weight-bold text-center" style={{color: "#ffffff"}}>Registration</h4>
               <Form.Group size="lg"  className="gap">
                 <Form.Control autoFocus
                   type="username" name="username" placeholder="Username" value={this.state.username} onChange={this.onChange}
