@@ -12,4 +12,3 @@ Possible class that would need to be implemented:
 
 - Leaderboard class
 ---- This class would contain the highest scores from each category and display them on a leaderboard
----- Possible methods would include functions to display high scores for a certain category, or for a certain user.
