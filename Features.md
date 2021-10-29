@@ -1,4 +1,4 @@
-Main features of TriviaKing:
+Features of TriviaKing:
 
 1. Login Page
    - A page where the user can log in to their account using their username and password.
