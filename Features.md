@@ -1,7 +1,7 @@
 Main features of TriviaKing:
 
 1. Login Page
-   - A page where the user can log in to their account using their email and password.
+   - A page where the user can log in to their account using their username and password.
 3. Registration Page
    - A page where the user can create an account by entering their email, password, and a unique username.
 5. Categories
