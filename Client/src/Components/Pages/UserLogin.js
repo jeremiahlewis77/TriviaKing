@@ -59,7 +59,7 @@ class UserLogin extends Component{
           })
         }
         else if(this.state.username!=="" && this.state.password!==""){
-        Axios.post('http://localhost:3002/auth/user',{
+        Axios.post('https://triviaking.azurewebsites.net/auth/user',{
           username:this.state.username,
           password:this.state.password
         }).then((response) => {
