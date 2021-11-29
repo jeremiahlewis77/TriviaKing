@@ -1,10 +1,10 @@
 const mysql = require("mysql");
 const db = mysql.createConnection({
-    host: DB_HOST,
-    port: DB_PORT,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    database: DB_NAME,
+    host: 'triviaking-server.database.windows.net',
+    port: 1433,
+    user: 'triviaking4353',
+    password: 'cosc4353triviaking!',
+    database: 'TriviaKingDB',
    });
    
    db.connect(function(err){
