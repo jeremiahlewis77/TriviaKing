@@ -100,7 +100,7 @@ class Register extends Component{
         }
         
         else if(this.state.usernameError==="" && this.state.passwordError==="" && this.state.passwordMatchError==="" && this.state.emailError===""){
-         Axios.post('http://localhost:3002/register',{
+         Axios.post('https://triviaking.azurewebsites.net/register',{
            username:this.state.username,
            password:this.state.password,
            email:this.state.email,
