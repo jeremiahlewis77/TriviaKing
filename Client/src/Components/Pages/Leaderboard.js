@@ -22,7 +22,7 @@ class Leaderboard extends Component{
     }
     componentDidMount()
     {
-        var url='http://localhost:3002/leaderboard/';
+        var url='https://triviaking.azurewebsites.net/leaderboard/';
         Axios.get(url).then(res => {
            const a=JSON.parse(res.data)
            this.setState({Data:a})
