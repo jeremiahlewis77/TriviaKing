@@ -8,10 +8,6 @@ on:
     branches:
       - main
   workflow_dispatch:
-  
-defaults:
-  run:
-    working-directory: Client
 
 jobs:
   build:
@@ -27,6 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd Client
           npm install 
           npm run build --if-present
           npm run test --if-present
@@ -34,7 +31,7 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: node-app
+          name: triviaking
           path: .
 
   deploy:
