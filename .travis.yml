@@ -7,5 +7,4 @@ before_install:
   - npm install
   - npm run build
 script:
-  - cd Client
   - npm test
