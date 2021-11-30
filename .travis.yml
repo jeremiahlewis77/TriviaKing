@@ -4,7 +4,7 @@ node_js:
 
 before_install:
   - cd Client
-  - npm build
+  - npm run build
 script:
   - cd Client
   - npm test
