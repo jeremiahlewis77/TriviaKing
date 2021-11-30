@@ -3,15 +3,6 @@ const app = express();
 const cors = require('cors');
 const connection=require('./connection');
 const jwt = require('jsonwebtoken');
-var nodemailer = require('nodemailer');
-
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'kaushikchitipothu5@gmail.com',
-    pass: 'Kaushik123!@#'
-  }
-});
 
 app.use(
     cors({
@@ -116,91 +107,6 @@ app.get('/Questions/:id',(request,response)=>{
 		}
 		return response.json(JSON.stringify(data))
  })
-})
-
-//otp
-app.post('/otp',(request,response)=>{
-  var otp = Math.floor(100000 + Math.random() * 900000);
-  var username= request.body.username;
-  var updatequery="update user_otp set otp=? where username=?";
-  var insertquery="insert into user_otp values(?,?)";
-  connection.query(
-		"Select email from user_authenticationd where username=?",[username],
-		(err, result) => {
-          var id=result[0].email;
-          var mailOptions = {
-            from: 'kaushikchitipothu5@gmail.com',
-            to: id,
-            subject: 'TriviaKing: OTP to reset password',
-            text: 'The 6 digit one time password is : '+otp
-          };
-          transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-          })
-    })
-
-  connection.query(
-		"Select * from user_otp where username=?",[username],
-		(err, result) => {
-		  if (result.length > 0) {
-        console.log(result);
-        connection.query(
-          updatequery,[otp,username],
-          (err, result) => {
-            if (err) {
-              response.send(err)
-            }
-            else{
-              response.send("success")
-            }
-			})
-    }
-    else{
-      connection.query(
-        insertquery,[username,otp],
-        (err, result) => {
-          if (err) {
-            response.send(err)
-          }
-          else{
-            response.send("success")
-          }
-    })
-    }
-    })           
-})
-
-app.post("/otp/check",(request,response)=>{
-  var username= request.body.username;
-  var otp = request.body.otp;
-  console.log(username,' ', otp)
-  var query="select * from user_otp where username=? and otp=?";
-  connection.query(
-    query,[username,otp],
-    (err, result) => {
-      console.log(result)
-      if(result.length==1){
-        var go = { username: username };
-            return response.json(go);
-      }
-})
-})
-
-//password reset
-app.post("/reset",(req,res)=>{
-  console.log('inside');
-  var username = req.body.username;
-    var password = req.body.password;
-      const sqlReset = `UPDATE user_authenticationd SET password = "${password}" WHERE username = "${username}";`;
-      console.log(sqlReset);
-      connection.query(sqlReset, (err, result) => {
-          var go = { goto: '/' };
-            return res.json(go); 
-      });
 })
 
 app.listen(3002, () => {
