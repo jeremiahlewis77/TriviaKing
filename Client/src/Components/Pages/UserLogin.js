@@ -112,7 +112,7 @@ class UserLogin extends Component{
             <div style={{padding:'8px', color:'#ffffff'}} className="text-center">
               <Link to="/register" className="deco-none">Register</Link>
               <span className="p-2">|</span>
-              <a href="/forgotpassword" class="deco-none">Forgot Password?</a>
+              <a href="/ForgotPassword" class="deco-none">Forgot Password?</a>
              </div>
           </Form>
         </div>     

@@ -6,8 +6,6 @@ import Register from './Components/Pages/Register';
 import Categories from './Components/Pages/Categories';
 import Questions from './Components/Pages/Questions';
 import Leaderboard from './Components/Pages/Leaderboard';
-import ForgotPassword from './Components/Pages/ForgotPassword';
-import ResetPassword from './Components/Pages/ResetPassword';
 
 function App() {
   return (
@@ -19,8 +17,6 @@ function App() {
       <Route path="/categories" component={Categories}></Route>
       <Route path="/questions/:id" component={Questions}></Route>
       <Route path="/leaderboard" component={Leaderboard}></Route>
-      <Route path="/forgotpassword" component={ForgotPassword}></Route>
-      <Route path="/resetpassword" component={ResetPassword}></Route>
       </Switch>
     </Router>
     </>
