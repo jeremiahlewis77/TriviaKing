@@ -17,7 +17,7 @@ function Leaderboard()
     const [totalItems, setTotalItems] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const ITEMS_PER_PAGE = 10;
+    const ITEMS_PER_PAGE = 7;
         
     useEffect ( () => { 
         var url='http://localhost:3002/leaderboard/';

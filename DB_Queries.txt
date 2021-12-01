@@ -23,10 +23,11 @@ Select * from questions_sports;
 	timestamp datetime,
 	score int
 );
-
+create table user_otp(username varchar(20) NOT NULL, otp int(6));
 Select sysdate();
-Select * from leaderboard;
+
 create table leaderboard(username varchar(20),score int,category varchar(20));
+Select * from leaderboard;
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Kaushik@1';
 flush privileges;
