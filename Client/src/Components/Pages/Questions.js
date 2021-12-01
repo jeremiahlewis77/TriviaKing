@@ -31,7 +31,7 @@ class Question extends Component{
 
     componentDidMount()
     {
-        var url='http://localhost:3002/questions/'+this.state.selectedCategory;
+        var url='https://triviaking.azurewebsites.net/questions/'+this.state.selectedCategory;
         Axios.get(url).then(res => {
            const a=JSON.parse(res.data)
            this.setState({data:a})
@@ -51,14 +51,14 @@ class Question extends Component{
         if(this.state.index===this.state.data.length-1)
          {
           this.setState({show:true});
-          Axios.post('http://localhost:3002/leaderboard',{username:this.state.username,score:this.state.index+1,category:this.state.selectedCategory}).then((response) => {
+          Axios.post('https://triviaking.azurewebsites.net/leaderboard',{username:this.state.username,score:this.state.index+1,category:this.state.selectedCategory}).then((response) => {
                 console.log(response)
                 });
          }
       }
       else{
         this.setState({show:true});
-        Axios.post('http://localhost:3002/leaderboard',{username:this.state.username,score:this.state.index,category:this.state.selectedCategory}).then((response) => {
+        Axios.post('https://triviaking.azurewebsites.net/leaderboard',{username:this.state.username,score:this.state.index,category:this.state.selectedCategory}).then((response) => {
                 console.log(response)
                 });
       }

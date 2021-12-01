@@ -4,9 +4,9 @@ const cors = require('cors');
 const connection=require('./connection');
 const jwt = require('jsonwebtoken');
 
+app.set('port', process.env.PORT || 3000);
 app.use(
     cors({
-      origin: ["http://localhost:3000"],
       methods: ["GET", "POST"],
       credentials: true,
     })
@@ -109,6 +109,6 @@ app.get('/Questions/:id',(request,response)=>{
  })
 })
 
-app.listen(3002, () => {
-    console.log("running on port 3002")
-})
+app.listen(app.get('port'), function() { 
+  console.log('Listening on: ', app.get('port'))
+});

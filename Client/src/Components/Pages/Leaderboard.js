@@ -13,6 +13,7 @@ function Leaderboard()
    
     useEffect ( () => { 
         var url='http://localhost:3002/leaderboard/';
+
         Axios.get(url).then(res => {
            const a=JSON.parse(res.data)
            setData(a)
