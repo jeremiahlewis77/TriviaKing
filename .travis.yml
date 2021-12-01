@@ -4,6 +4,7 @@ node_js:
 
 before_install:
   - cd Client
+  - rm -rf node_modules
   - npm install
   - npm run build
 script:
