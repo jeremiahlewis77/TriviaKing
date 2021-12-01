@@ -1,7 +1,6 @@
 Features of TriviaKing:
 
 Sprint 1:
-
 1. Login Page
    - A page where the user can log in to their account using their username and password.
 2. Registration Page
@@ -14,7 +13,6 @@ Sprint 1:
    - This page displays the user top players in order with the highest points in each category in the TriviaKing game.
 
 Sprint2:
-
 1. Forgot Password 
    - Updated the forgot password feature where the user can enter their username and they will recieve an otp which will be verified and the user will be allowed to     change their password.
 2. Page-Panning
