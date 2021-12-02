@@ -9,9 +9,9 @@ Sprint 1:
 3. Categories
    - The questions are separated by categories and the user is be able to choose what topics they want to play on.
 4. Trivia Schema
-   - This includes allowing the user to select an answer and show the user if the answer they provided is correct or not, if correct the user will gain points for that question and move on to the next question. If the user's answer is incorrect the quiz will end at that question diplaying the usr's score.
+   - This includes allowing the user to select an answer and show the user if the answer they provided is correct or not, if correct the user will gain points for that question and move on to the next question. If the user's answer is incorrect the quiz will end at that question diplaying the user's score.
 5. Leaderboard
-   - This page displays the user top players in order with the highest points in each category in the TriviaKing game.
+   - This page displays the user top players in order with the highest points in each or all categories in the TriviaKing game.
 
 Sprint2:
 
@@ -22,6 +22,6 @@ Sprint2:
 3. Sorting
    - The leaderboard will be able to sort on basis of the category or the username and the list will be sorted.
 4. Searching
-   - The user will be able to search their username thorught all the pages of the leaderboard.
+   - The user will be able to search their username throughout all the pages of the leaderboard.
 5. Create Own Quizzes
    - User will be able to create their own quiz which other users will be able to play, currently since the db is local other users cannot access and we are working    on it.
