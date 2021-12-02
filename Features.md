@@ -13,7 +13,7 @@ Sprint 1:
 5. Leaderboard
    - This page displays the user top players in order with the highest points in each or all categories in the TriviaKing game.
 
-Sprint2:
+Sprint 2:
 
 1. Forgot Password 
    - Updated the forgot password feature where the user can enter their username and they will recieve an otp which will be verified and the user will be allowed to     change their password.
